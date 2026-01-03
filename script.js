@@ -15,8 +15,8 @@ function setUp() {
   if (!score) score = 0;
   recordElement.textContent = record;
   scoreElement.textContent = score;
-  console.log(lastDate - currentDate);
-  if (lastDate && lastDate - currentDate < 1) {
+  console.log(currentDate - lastDate);
+  if (lastDate && currentDate - lastDate < 1) {
     increaseBtn.classList.add("disable");
   }
 
@@ -28,7 +28,7 @@ function setUp() {
       recordElement.textContent = record;
     }
     lastDate = currentDate;
-    if (lastDate && lastDate - currentDate < 1) {
+    if (lastDate && currentDate - lastDate < 1) {
       increaseBtn.classList.add("disable");
     }
     saveData(score, record, lastDate);
